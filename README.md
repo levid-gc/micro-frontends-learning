@@ -1,2 +1,1 @@
-# react-typescript
-React + TypeScript
+# 微前端
