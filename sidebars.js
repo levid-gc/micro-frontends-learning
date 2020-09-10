@@ -8,8 +8,8 @@
  */
 
 module.exports = {
-  someSidebar: {
-    Docusaurus: ['doc1', 'doc2', 'doc3'],
+  docs: {
+    '初识微服务': ['what-are-micro-frontends', 'doc2', 'doc3'],
     Features: ['mdx'],
   },
 };

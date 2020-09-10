@@ -27,13 +27,17 @@ module.exports = {
         {
           to: 'docs/',
           activeBasePath: 'docs',
-          label: 'Docs',
+          label: '文档',
           position: 'left',
         },
-        {to: 'blog', label: 'Blog', position: 'left'},
+        {
+          to: 'blog',
+          label: '博客',
+          position: 'left'
+        },
         // Please keep GitHub link to the right for consistency.
         {
-          href: 'https://github.com/facebook/docusaurus',
+          href: 'https://github.com/levid-gc/micro-frontends-learning',
           label: 'GitHub',
           position: 'right',
         },
