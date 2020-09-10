@@ -39,201 +39,43 @@ A、B、C 团队三个盒子表示的就是垂直组织的软件系统。其中�
 
 ### 前端
 
+![img](../static/img/what-are-micro-frontends/figure-1.4.png)
+
+一个微前端可以有一个完整的页面或者其他团队需要包含的片段。团队针对给定的特性生成必要的 HTML、CSS 和 JavaScript。团队之间不会共享类库和框架代码。每个团队可以灵活选择适合他们的工具或者技术，并且独立升级他们额依赖。
+
+#### 页面所有权
+
+![img](../static/img/what-are-micro-frontends/figure-1.5.png)
+
+每个团队都可以构建他们自己的页面，并托管于他们的应用中，并通过他们公共的域来访问。
+
+微前端架构理解：
+
+- 团队可以在他们的专业领域自治地工作
+- 团队可以自由选择适合他们手头工作地技术栈
+- 应用是松耦合地并且仅能在前端集成（比如：通过链接）
+
+#### 片段
+
+页面这个概念并不总是足够地。通常来说，我们会有在多个页面上出现的元素，比如页头和页尾。这时，我们不需要每一个团队重复实现它。这时候就会引入 **片段** 概念。
+
+![img](../static/img/what-are-micro-frontends/figure-1.6.png)
+
+团队可以选择添加从其他团队提供的功能。某些片段可能需要上下文信息，也有一些片段可能引入他们自己内部分状态。但是引入片段的团队不需要知道那些片段的内部状态以及实现细节。
+
 ### 前端集成
+
+![img](../static/img/what-are-micro-frontends/figure-1.7.png)
+
+**前端集成** 描述的是一系列可以组合各团队 UI 的工具和技术。
+
+#### 路由和页面转换
+
+这里讨论的是页面级集成。我们需要一个系统能够将我们从团队 A 的页面跳转到团队 B 的页面。解决方案可以简单到很直接，直接使用 **HTML 链接**。如果想要启用客户端导航，也就是在渲染下一个页面时不需要重新加载，这就会变得很复杂。实现这个，很可能会使用一个共享的 **应用 shell** 或者元框架，比如 **single-spa**。
+
+#### 合成
+
+#### 通讯
 
 ### 主题共享
 
-## Markdown Syntax
-
-To serve as an example page when styling markdown based Docusaurus sites.
-
-## Headers
-
-# H1 - Create the best documentation
-
-## H2 - Create the best documentation
-
-### H3 - Create the best documentation
-
-#### H4 - Create the best documentation
-
-##### H5 - Create the best documentation
-
-###### H6 - Create the best documentation
-
----
-
-## Emphasis
-
-Emphasis, aka italics, with *asterisks* or _underscores_.
-
-Strong emphasis, aka bold, with **asterisks** or __underscores__.
-
-Combined emphasis with **asterisks and _underscores_**.
-
-Strikethrough uses two tildes. ~~Scratch this.~~
-
----
-
-## Lists
-
-1. First ordered list item
-1. Another item
-   - Unordered sub-list.
-1. Actual numbers don't matter, just that it's a number
-   1. Ordered sub-list
-1. And another item.
-
-* Unordered list can use asterisks
-
-- Or minuses
-
-+ Or pluses
-
----
-
-## Links
-
-[I'm an inline-style link](https://www.google.com/)
-
-[I'm an inline-style link with title](https://www.google.com/ "Google's Homepage")
-
-[I'm a reference-style link][arbitrary case-insensitive reference text]
-
-[You can use numbers for reference-style link definitions][1]
-
-Or leave it empty and use the [link text itself].
-
-URLs and URLs in angle brackets will automatically get turned into links. http://www.example.com/ or <http://www.example.com/> and sometimes example.com (but not on GitHub, for example).
-
-Some text to show that the reference links can follow later.
-
-[arbitrary case-insensitive reference text]: https://www.mozilla.org/
-[1]: http://slashdot.org/
-[link text itself]: http://www.reddit.com/
-
----
-
-## Images
-
-Here's our logo (hover to see the title text):
-
-Inline-style: ![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png 'Logo Title Text 1')
-
-Reference-style: ![alt text][logo]
-
-[logo]: https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png 'Logo Title Text 2'
-
-Images from any folder can be used by providing path to file. Path should be relative to markdown file.
-
-![img](../static/img/logo.svg)
-
----
-
-## Code
-
-```javascript
-var s = 'JavaScript syntax highlighting';
-alert(s);
-```
-
-```python
-s = "Python syntax highlighting"
-print(s)
-```
-
-```
-No language indicated, so no syntax highlighting.
-But let's throw in a <b>tag</b>.
-```
-
-```js {2}
-function highlightMe() {
-  console.log('This line can be highlighted!');
-}
-```
-
----
-
-## Tables
-
-Colons can be used to align columns.
-
-| Tables        |      Are      |   Cool |
-| ------------- | :-----------: | -----: |
-| col 3 is      | right-aligned | \$1600 |
-| col 2 is      |   centered    |   \$12 |
-| zebra stripes |   are neat    |    \$1 |
-
-There must be at least 3 dashes separating each header cell. The outer pipes (|) are optional, and you don't need to make the raw Markdown line up prettily. You can also use inline Markdown.
-
-| Markdown | Less      | Pretty     |
-| -------- | --------- | ---------- |
-| _Still_  | `renders` | **nicely** |
-| 1        | 2         | 3          |
-
----
-
-## Blockquotes
-
-> Blockquotes are very handy in email to emulate reply text. This line is part of the same quote.
-
-Quote break.
-
-> This is a very long line that will still be quoted properly when it wraps. Oh boy let's keep writing to make sure this is long enough to actually wrap for everyone. Oh, you can _put_ **Markdown** into a blockquote.
-
----
-
-## Inline HTML
-
-<dl>
-  <dt>Definition list</dt>
-  <dd>Is something people use sometimes.</dd>
-
-  <dt>Markdown in HTML</dt>
-  <dd>Does *not* work **very** well. Use HTML <em>tags</em>.</dd>
-</dl>
-
----
-
-## Line Breaks
-
-Here's a line for us to start with.
-
-This line is separated from the one above by two newlines, so it will be a _separate paragraph_.
-
-This line is also a separate paragraph, but... This line is only separated by a single newline, so it's a separate line in the _same paragraph_.
-
----
-
-## Admonitions
-
-:::note
-
-This is a note
-
-:::
-
-:::tip
-
-This is a tip
-
-:::
-
-:::important
-
-This is important
-
-:::
-
-:::caution
-
-This is a caution
-
-:::
-
-:::warning
-
-This is a warning
-
-:::
